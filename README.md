@@ -1,4 +1,4 @@
 ## ISS-Location Demo
 
-Essayez la démo :
+Jouer :
 [Essayer la démo](https://mrik375.github.io/ISS-Location/)
