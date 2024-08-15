@@ -10,7 +10,7 @@ let followISS = true; // Variable pour activer ou désactiver le suivi automatiq
 let initialZoom; // Variable pour stocker le niveau de zoom initial
 
 async function afficherPosition() { // [async - await] => permet d'attendre le retour de fetch(promesse résolue) pour pouvoir passer à la suite.
-    const result = await fetch('http://api.open-notify.org/iss-now.json');
+    const result = await fetch('https://api.open-notify.org/iss-now.json');
     const data = await result.json();
     let latitude, longitude;
     if(data) {
@@ -36,7 +36,7 @@ function init() {
     initialZoom = map.getZoom(); // Stocker le niveau de zoom initial
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
     // Désactive le suivi automatique lorsque l'utilisateur déplace la carte
     map.on('dragstart', () => {
