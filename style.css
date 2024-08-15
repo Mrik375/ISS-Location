@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(img/iss_back.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    font-family: "New Amsterdam", sans-serif;
+    
+}
+h1 {
+    color: white;
+    text-shadow: 0px 0px 7px black;
+    text-align: center;    
+    font-weight: 400;
+    font-size: 3.5rem;
+    -webkit-text-stroke: 2px black; /* Bordure autour des lettres */
+}
+#map {
+    height: 600px;
+    width: 900px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 20px 1px black;
+}
+p {
+    color: white;
+    text-shadow: 3px 3px 4px black;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+.recenter-button:hover {
+    box-shadow: 0 0 10px grey; /* Effet d'ombre au survol */
+}
