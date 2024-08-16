@@ -1,21 +1,20 @@
 let map;
 let issMarker;
-let icon = L.icon({
+let icon = L.icon({ // "L" => Alias pour l'objet global de la bibliothèque Leaflet - Fonction fournie par la bibliothèque Leaflet
     iconUrl: './img/iss.png',
     iconSize: [50, 50],
     iconAnchor: [25, 25],
 });
-
 let followISS = true; // Variable pour activer ou désactiver le suivi automatique
 let initialZoom; // Variable pour stocker le niveau de zoom initial
 
 async function afficherPosition() { // [async - await] => permet d'attendre le retour de fetch(promesse résolue) pour pouvoir passer à la suite.
-    const result = await fetch('https://api.open-notify.org/iss-now.json');
+    const result = await fetch('https://api.wheretheiss.at/v1/satellites/25544');
     const data = await result.json();
     let latitude, longitude;
     if(data) {
-        latitude = data.iss_position.latitude;
-        longitude = data.iss_position.longitude;
+        latitude = data.latitude;
+        longitude = data.longitude;
         document.getElementById('latitude').innerText = latitude;
         document.getElementById('longitude').innerText = longitude;
     }
@@ -65,6 +64,6 @@ function init() {
     recenterButton.addTo(map);
 
     afficherPosition();
-    setInterval(afficherPosition, 1000);
+    setInterval(afficherPosition, 1200);
 }
 init();
